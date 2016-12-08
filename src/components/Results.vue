@@ -1,10 +1,8 @@
 <template>
-  <div class="results">
-    <ul>
-      <li v-for="result in results">
-        <car :data="result" />
-      </li>
-    </ul>
+  <div class="results columns is-multiline">
+    <div v-for="result in results" class="column">
+      <car :data="result" />
+    </div>
   </div>
 </template>
 
@@ -25,5 +23,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+	.results {
+		margin: auto;
+		margin-top: 20px;
+	}
 </style>
