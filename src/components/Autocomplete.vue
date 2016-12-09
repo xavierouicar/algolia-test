@@ -7,7 +7,6 @@
 <script>
 
 import places from 'places.js';
-import algoliasearch from 'algoliasearch';
 import store from '../store';
 
 export default {
@@ -21,17 +20,8 @@ export default {
         });
         autocomplete.on('change', (e) => {
           const latlng = e.suggestion.latlng;
-          const client = algoliasearch('06NR5QJ17D', '3e7392fe15c8e3b13cf18bc620e51974');
-          const index = client.initIndex('car');
-          index.search({
-            aroundLatLng: `${latlng.lat},${latlng.lng}`,
-          }, (err, content) => {
-            if (!err) {
-              store.commit('updateResults', content.hits);
-            } else {
-              console.alert('error');
-            }
-          });
+          store.commit('changeLatLng', latlng);
+          store.dispatch('search');
         });
       },
     },
