@@ -1,15 +1,25 @@
 <template>
   <div class="columns datefilters">
-    <datepicker
-    :date="startDate" :option="option" :limit="limit"
-    @change="handleDateStartChange" />
+    <div class="column is-4">
+      <label>
+        Début de location
+      </label>
+      <datepicker
+        :date="startDate" :option="option" :limit="limit"
+        @change="handleDateStartChange" />
+    </div>
     <div class="column is-2">
       <vb-switch type="success" size="large" checked @input="startPeriodChange" />
       {{this.$store.state.search.period.start ? 'Matin' : 'Après-midi'}}
     </div>
-    <datepicker
-      :date="endDate" :option="option" :limit="limit"
-      @change="handleDateEndChange" />
+    <div class="column is-4">
+      <label>
+        Fin de location
+      </label>
+      <datepicker
+        :date="endDate" :option="option" :limit="limit"
+        @change="handleDateEndChange" />
+    </div>
     <div class="column is-2">
       <vb-switch type="success" size="large" checked @input="endPeriodChange" />
       {{this.$store.state.search.period.end ? 'Matin' : 'Après-midi'}}
@@ -40,7 +50,7 @@ export default {
         week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
         month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         format: 'YYYY-MM-DD',
-        placeholder: 'when?',
+        placeholder: 'Saisir une date',
         inputStyle: {
           display: 'inline-block',
           padding: '6px',
