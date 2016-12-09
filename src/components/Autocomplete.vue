@@ -26,11 +26,6 @@ export default {
       },
     },
   },
-  methods: {
-    resultsChanged(results) {
-      this.$store.dispatch('resultsChanged', results);
-    },
-  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',

@@ -24,8 +24,6 @@ export default {
       }, (err, content) => {
         if (!err) {
           commit('updateResults', content.hits);
-        } else {
-          console.alert('error');
         }
       });
     },
@@ -53,18 +51,10 @@ export default {
         const endDate = parseInt(state.date.end.replace(/-/g, ''), 10);
         const filtersArray = [];
         for (let i = startDate; i <= endDate; i += 1) {
-          if (i === startDate) {
-            if (state.period.start) {
-              filtersArray.push((i * 10) + 1);
-            }
-            filtersArray.push((i * 10) + 2);
-          } else if (i === endDate) {
+          if (i !== startDate || state.period.start) {
             filtersArray.push((i * 10) + 1);
-            if (!state.period.end) {
-              filtersArray.push((i * 10) + 2);
-            }
-          } else {
-            filtersArray.push((i * 10) + 1);
+          }
+          if (i !== endDate || state.period.end) {
             filtersArray.push((i * 10) + 2);
           }
         }
