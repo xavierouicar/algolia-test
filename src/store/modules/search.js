@@ -54,7 +54,7 @@ export default {
           if (i !== startDate || state.period.start) {
             filtersArray.push((i * 10) + 1);
           }
-          if (i !== endDate || state.period.end) {
+          if (i !== endDate || !state.period.end) {
             filtersArray.push((i * 10) + 2);
           }
         }
