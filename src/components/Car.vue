@@ -3,16 +3,16 @@
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img v-if="data.media && data.media != '0'" :src="`https://docker.ouicar.fr/media/${data.media}-product`" />
-          <img v-if="!data.media || data.media == '0'" src="https://docker.ouicar.fr/static/v2/img/_car/car-empty-1230x850.png" />
+          <img v-if="data.media && data.media != '0'" :src="`https://ouicar.fr/media/${data.media}-product`" />
+          <img v-if="!data.media || data.media == '0'" src="https://ouicar.fr/static/v2/img/_car/car-empty-1230x850.png" />
         </figure>
       </div>
       <div class="card-content">
         <div class="media">
           <div class="media-left">
             <figure class="image is-32x32">
-              <img v-if="data.owner.media && data.owner.media != '0'" :src="`https://docker.ouicar.fr/media/${data.owner.media}-thumb`" />
-              <img v-if="!data.owner.media || data.owner.media == '0'" src="https://docker.ouicar.fr/static/v2/img/user/no-avatar-unknown.png" />
+              <img v-if="data.owner.media && data.owner.media != '0'" :src="`https://ouicar.fr/media/${data.owner.media}-thumb`" />
+              <img v-if="!data.owner.media || data.owner.media == '0'" src="https://ouicar.fr/static/v2/img/user/no-avatar-unknown.png" />
             </figure>
           </div>
           <div class="media-content">
