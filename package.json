@@ -17,6 +17,7 @@
     "algolia-search": "^2.0.1",
     "algoliasearch": "^3.19.2",
     "bulma": "^0.2.3",
+    "chalk": "^1.1.3",
     "express": "^4.14.0",
     "places.js": "^1.4.7",
     "stylus": "^0.54.5",
